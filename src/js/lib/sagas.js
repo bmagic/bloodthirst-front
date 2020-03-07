@@ -3,7 +3,7 @@ import { getUrl } from './request'
 
 function * getItems (action) {
   try {
-    const result = yield getUrl(`http://localhost:3000/v1/items?character=${action.character}`)
+    const result = yield getUrl(`${process.env.BACKEND_URL}/v1/items?character=${action.character}`)
     yield put({ type: 'GET_ITEMS_SUCCESS', items: result.data })
   } catch (e) {
     yield put({ type: 'ADD_ERROR', error: e.response.data })
@@ -12,7 +12,7 @@ function * getItems (action) {
 
 function * getCharacters () {
   try {
-    const result = yield getUrl('http://localhost:3000/v1/characters')
+    const result = yield getUrl(`${process.env.BACKEND_URL}/v1/characters`)
     yield put({ type: 'GET_CHARACTERS_SUCCESS', characters: result.data })
   } catch (e) {
     yield put({ type: 'ADD_ERROR', error: e.response.data })
