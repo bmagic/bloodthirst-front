@@ -3,7 +3,7 @@ WORKDIR /usr/src/client
 
 COPY . .
 RUN npm install
-CMD npm build
+RUN npm build
 
 FROM nginx:stable-alpine
 
