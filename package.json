@@ -4,7 +4,7 @@
   "description": "Bloodthirst WoW Guild Front",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production; cd docker; docker build ."
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "Bmagic <baptiste@bmagic.fr>",
